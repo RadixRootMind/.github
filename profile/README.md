@@ -1,7 +1,5 @@
 <div align="center">
 
-<img src="assets/logo.png" alt="RadixRootMind logo" width="130">
-
 # 🌳 RadixRootMind
 
 **Chip-rooted open infrastructure for on-device embodied intelligence**
