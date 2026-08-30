@@ -1,143 +1,152 @@
 <div align="center">
 
-# 🌳 RadixRootMind
+# RadixRootMind
 
-**Chip-rooted open infrastructure for on-device embodied intelligence**
+**Chip-grounded open infrastructure for on-device embodied intelligence**
 
-<sub>*Radix Root-layer Infrastructure for Chip-grounded On-device Embodied Intelligence*</sub>
-
-[![GitHub followers](https://img.shields.io/github/followers/RadixRootMind?style=social)](https://github.com/RadixRootMind)
 [![Awesome](https://awesome.re/badge.svg)](https://github.com/RadixRootMind/Awesome-Quant-VLA-WAM)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/RadixRootMind)
 
-**English** · [中文](#-中文)
+**English** · [中文](#中文)
 
 </div>
 
 ---
 
-RadixRootMind is an open research and engineering organization focused on **chip-grounded infrastructure for on-device embodied intelligence** — spanning cross-chip adaptation, hardware-aware optimization, quantization, MLIR-based compiler infrastructure, multimodal streaming inference, edge runtimes, robotic motion control, world-model prediction, and trusted on-device autonomy.
+RadixRootMind is an open research and engineering organization focused on **chip-grounded infrastructure for on-device embodied intelligence** — spanning cross-chip operator-library adaptation, hardware-aware optimization, quantization, MLIR-based compilation, multimodal streaming inference, edge runtimes, closed-loop robotic motion control, world-model prediction, and trusted on-device autonomy.
 
-We transform research insight into open models, compiler systems, control systems, data, and evaluation frameworks — connecting chip-level capability all the way up to real-world physical intelligence. Everything is built in the open and designed to interoperate with existing operator and compiler ecosystems, for the broader AI, robotics, and semiconductor communities.
+We turn research insight into open models, compiler toolchains, inference engines, control systems, datasets, and evaluation frameworks — connecting chip-level capability up to real-world physical intelligence. Everything is built in the open and designed to interoperate with existing operator libraries, compiler stacks (Triton / MLIR), and robotics middleware (ROS 2), for the broader AI, robotics, and semiconductor communities.
 
-## 🚀 Available now
+## Projects
 
-| Project | What it is | Status |
+| Project | Description | Status |
 |---|---|---|
-| [**Awesome-Quant-VLA-WAM**](https://github.com/RadixRootMind/Awesome-Quant-VLA-WAM) | Curated reading list — 180+ papers on quantization for VLA & World-Action models, with a five-category taxonomy, roadmap, and evaluation guide | ✅ **Live** |
-| **quant-vla** | Companion engineering stack: VLA post-training quantization (W4A4 & more) + LIBERO evaluation, reproducible pipeline | 🚧 **Coming soon** |
+| [**Awesome-Quant-VLA-WAM**](https://github.com/RadixRootMind/Awesome-Quant-VLA-WAM) | Curated reading list of 180+ papers on quantization for Vision-Language-Action (VLA) and World-Action (WAM) models, with a five-category taxonomy and an evaluation guide | Available |
+| **quant-vla** | Companion engineering stack for VLA post-training quantization (W4A4 and beyond) with LIBERO evaluation and a reproducible pipeline | In preparation |
 
-> Start with the **Awesome list** above, and ⭐ star & watch to be notified of our first code release.
+## Technical Directions
 
-## 🧭 What we're building
+Six directions at different stages of maturity, each targeting a concrete layer of the on-device embodied stack.
 
-Maturity: ✅ available · 🚧 in progress · 🗺️ planned
+**Cross-chip Operator-Library Adaptation** *(planned)*
+A unified operator interface and heterogeneous scheduling layer across domestic and mainstream accelerators (GPU, DCU, NPU, and compute-in-memory devices). Rather than re-implementing kernels, we adapt and reuse open operator libraries and generate hardware-aware kernels, with a capability-abstraction layer that shields chip-specific differences from the layers above.
 
-**⚡ VLA Quantization & Inference Engine** — 🚧
-End-to-end perception → understanding → prediction → planning → decision; W4A4 and other formats; unified multimodal streaming for low-latency, high-throughput inference.
+**VLA Quantization and Inference Engine** *(in progress)*
+A low-bit inference engine for embodied policies: quantized (W4A4 and mixed-precision) linear and attention kernels, KV-cache quantization, action-token decoding, and unified multimodal streaming for low-latency, high-throughput closed-loop inference. Grounded in post-training quantization (PTQ) and quantization-aware training (QAT) methods that preserve action fidelity, not only layer-output error.
 
-**📊 Evaluation & Deployment Tools** — 🚧
-Benchmarks (LIBERO, ManiSkill2/3, OpenVLA-Bench, WorldReasonBench …); data standards (RLDS, Open-X Embodiment); Studio for model discovery, GPU allocation, and `torchrun` distributed launch; visualization + end-to-end deploy chain.
+**MLIR Compilation Infrastructure** *(planned)*
+An end-to-end graph-lowering and code-generation toolchain: operator fusion, Triton-kernel auto-registration and compile caching, dynamic batching, and multi-GPU sequence parallelism — bridging model graphs to portable, hardware-specific executables.
 
-**🌉 Cross-chip Unified Adaptation Layer** — 🗺️
-Unified operator interfaces & heterogeneous scheduling; a capability-abstraction layer that shields chip-specific differences; hardware-aware optimization that auto-generates optimal code.
+**Closed-loop Motion Control — A-Motion, ROS 2** *(planned)*
+A real-time control stack that couples streaming temporal inference with multimodal motion control. The A-Motion closed loop targets millisecond-scale control frequencies, closed-loop feedback, and policy deployment on real robots, integrated with ROS 2 for perception, actuation, and system orchestration.
 
-**⚙️ MLIR Compilation Infrastructure** — 🗺️
-Full graph-lowering & codegen toolchain; Triton-kernel auto-registration & compile caching; dynamic batching & multi-GPU sequence parallelism.
+**Evaluation and Deployment Tools** *(in progress)*
+Reproducible closed-loop evaluation on standard benchmarks (LIBERO, ManiSkill2/3, SimplerEnv, OpenVLA-Bench); data standards (RLDS, Open-X Embodiment); model discovery, resource allocation, and distributed launch; visualization and an end-to-end deployment chain.
 
-**🤖 Motion — Robot Motion Control** — 🗺️
-Streaming temporal inference + multimodal motion control; the **A-Motion** closed loop for millisecond real-time control; closed-loop feedback & policy deployment.
+**World Models and On-chip Security** *(planned)*
+World-Action-Model (WAM) adaptation and predictive inference for embodied decision-making; trusted boot, data encryption, and privacy protection; on-chip autonomy auditing and governance.
 
-**🌍 World Models & On-chip Security** — 🗺️
-WAM adaptation & predictive inference; trusted boot, data encryption, privacy; on-chip autonomy auditing & governance.
+## Roadmap
 
-## 🗺️ Roadmap
+- **Phase 0 — Foundations** *(current)*: research list, organization profile, and community setup.
+- **Phase 1 — First code release**: open-source `quant-vla` with a reproducible quantize–evaluate–report pipeline.
+- **Phase 2 — Build out the stack**: deliver one direction at a time (inference engine, evaluation and deployment, operator-library adaptation, MLIR, motion control, world models).
+- **Phase 3 — Ecosystem**: chip-vendor and institutional partnerships, real-robot demonstrations, and contributor programs.
 
-- **Phase 0 — Foundations** *(now)*: research list, org profile, community setup (WeChat group + contribution guides).
-- **Phase 1 — First code release**: open-source `quant-vla` with a reproducible *quantize → LIBERO → results* pipeline and demo.
-- **Phase 2 — Build out the pillars**: deliver one pillar at a time (engine → eval/deploy → cross-chip → MLIR → motion → WAM).
-- **Phase 3 — Ecosystem**: chip-vendor & institutional partnerships, real-robot demos, contributor programs.
+## Who We're Looking For
 
-## 🤝 Who we're looking for
+Quantization, compiler, and inference engineers; VLA and world-model researchers; robotics and ROS developers; and chip-vendor and institutional partners.
 
-💻 Quantization / compiler / inference engineers · 🔬 VLA & world-model researchers · 🤖 robotics application developers · 🏢 chip vendors & institutional partners
+## Contributing
 
-## 🙌 How to Contribute
+Contributions of any size are welcome.
 
-All contributions are welcome — no change is too small.
+- **Add a paper or benchmark** to [Awesome-Quant-VLA-WAM](https://github.com/RadixRootMind/Awesome-Quant-VLA-WAM): open a pull request following the table format, or open an issue with the link.
+- **Report bugs or gaps** by opening an issue.
+- **Share results** — reproduction numbers, new quantization routes, or ablations.
+- **Improve documentation** — corrections, clearer wording, or translations.
+- **Propose ideas** — open an issue or a discussion for new directions.
 
-- 📚 **Add a paper / benchmark** to [Awesome-Quant-VLA-WAM](https://github.com/RadixRootMind/Awesome-Quant-VLA-WAM): open a PR following the table format (title · type · link), or just open an Issue with the link and we'll add it.
-- 🐛 **Report bugs or gaps** — open an Issue describing what's wrong or missing.
-- 🔬 **Share results** — reproduction numbers, new quantization routes, or ablations.
-- 📝 **Improve docs** — fix typos, clarify wording, or translate.
-- 💡 **Propose ideas** — start a discussion or open an Issue for new directions.
+Workflow: fork, branch, make your change, and open a pull request. For larger changes, open an issue first. New contributors can start with issues labeled `good first issue`.
 
-**Workflow:** Fork → branch → make your change → open a Pull Request. For anything larger, open an Issue first so we can align. Keep PRs focused with a short description, and please be respectful and constructive.
+## Contact
 
-New here? Look for issues labeled **`good first issue`**.
-
-## ⭐ Get involved
-
-- **Star & watch** the repos to follow releases
-- Open **Issues / PRs** — feedback, papers, and benchmarks all welcome
-- 📧 **xuenaier856@gmail.com** · 🐙 [github.com/RadixRootMind](https://github.com/RadixRootMind) · 💬 WeChat (below)
+- Email: xuenaier856@gmail.com
+- GitHub: [github.com/RadixRootMind](https://github.com/RadixRootMind)
+- WeChat: see below
 
 ---
 
-## 🌳 中文
+## 中文
 
 **根植于芯片的开放基础设施,服务端侧具身智能。**
 
-RadixRootMind 是一个开放开发者组织,致力于打造**具身智能的算力底座**——打通芯片底层能力、硬件感知优化、量化与边缘部署,直到真机在物理世界中执行动作。我们为 VLA(视觉-语言-动作)与 WAM(世界-动作)模型提供**根植于芯片的开放基座**,并与现有算子/编译器生态互通。
+RadixRootMind 是一个开放的研究与工程组织,聚焦**根植于芯片的端侧具身智能基础设施**——涵盖跨芯片算子库适配、硬件感知优化、量化、基于 MLIR 的编译、多模态流式推理、边缘运行时、闭环机器人运动控制、世界模型预测,以及可信的端侧自主性。
 
-### 🚀 现已开放
+我们把研究洞见转化为开放的模型、编译工具链、推理引擎、控制系统、数据集与评测框架,打通从芯片底层能力到真实物理智能的完整链路。所有工作均以开放方式构建,并与现有算子库、编译栈(Triton / MLIR)、机器人中间件(ROS 2)互通,服务于更广泛的 AI、机器人与半导体社区。
+
+### 项目
 
 | 项目 | 简介 | 状态 |
 |---|---|---|
-| [**Awesome-Quant-VLA-WAM**](https://github.com/RadixRootMind/Awesome-Quant-VLA-WAM) | 精选论文合集——180+ 篇 VLA & 世界模型量化研究,含五大分类体系、roadmap 与评测指南 | ✅ **已上线** |
-| **quant-vla** | 配套工程栈:VLA 后训练量化(W4A4 等)+ LIBERO 评测,可复现 pipeline | 🚧 **即将开源** |
+| [**Awesome-Quant-VLA-WAM**](https://github.com/RadixRootMind/Awesome-Quant-VLA-WAM) | 精选论文合集,180+ 篇 VLA(视觉-语言-动作)与 WAM(世界-动作)模型量化研究,含五大分类体系与评测指南 | 已上线 |
+| **quant-vla** | 面向 VLA 后训练量化(W4A4 及更低)与 LIBERO 评测的配套工程栈,提供可复现 pipeline | 筹备中 |
 
->  **Awesome 合集**——⭐ Star & Watch 关注首个代码发布。
+### 技术方向
 
-### 🧭 主要工作方向
+六个方向,处于不同成熟度阶段,分别对应端侧具身栈的一个具体层次。
 
-成熟度:✅ 已开放 · 🚧 开发中 · 🗺️ 规划中
+**跨芯片算子库适配**(规划中)
+面向国产与主流加速器(GPU、DCU、NPU、存算一体等)的统一算子接口与异构调度层。不重复造轮子,而是适配并复用开放算子库、生成硬件感知的高性能 kernel,并以能力抽象层向上屏蔽芯片差异。
 
-- **⚡ VLA 量化与推理引擎** — 🚧 感知/理解/预测/规划/决策端到端;W4A4 等多格式;统一多模态流式,低延迟高吞吐
-- **📊 评测与部署工具** — 🚧 LIBERO、ManiSkill2/3、OpenVLA-Bench、WorldReasonBench 等;RLDS、Open-X Embodiment;Studio(模型发现、GPU 分配、torchrun 分布式启动);可视化 + 端到端部署链
-- **🌉 跨芯片统一适配层** — 🗺️ 统一算子接口与异构调度;高性能算子库;硬件感知优化自动生成最优代码
-- **⚙️ MLIR 编译基础设施** — 🗺️ 完整图降级与代码生成;Triton kernel 自动注册与编译缓存;动态批处理与多 GPU 序列并行
-- **🤖 Motion 机器人运动控制** — 🗺️ 流式时序推理 + 多模态运动控制;毫秒级实时控制循环;闭环反馈与策略部署
-- **🌍 世界模型与片上安全** — 🗺️ WAM 适配加速与预测推理;可信启动、数据加密、隐私保护;片上自主性审计与治理
+**VLA 量化与推理引擎**(开发中)
+面向具身策略的低比特推理引擎:量化(W4A4 与混合精度)的线性与注意力算子、KV-cache 量化、动作 token 解码,以及统一多模态流式,实现低延迟、高吞吐的闭环推理。以保持动作保真度(而非仅层输出误差)的后训练量化(PTQ)与量化感知训练(QAT)方法为基础。
 
-### 🤝 欢迎加入
+**MLIR 编译基础设施**(规划中)
+端到端的图降级与代码生成工具链:算子融合、Triton kernel 自动注册与编译缓存、动态批处理、多 GPU 序列并行——把模型计算图桥接到可移植、面向具体硬件的可执行文件。
 
-💻 量化/编译/推理开发者 · 🔬 VLA/世界模型研究者 · 🤖 机器人应用开发者 · 🏢 芯片厂商与机构合作伙伴
+**闭环运动控制 —— A-Motion,ROS 2**(规划中)
+将流式时序推理与多模态运动控制耦合的实时控制栈。A-Motion 闭环面向毫秒级控制频率、闭环反馈与真机策略部署,并与 ROS 2 集成完成感知、执行与系统编排。
 
-### 🙌 如何贡献
+**评测与部署工具**(开发中)
+在标准 benchmark(LIBERO、ManiSkill2/3、SimplerEnv、OpenVLA-Bench)上的可复现闭环评测;数据标准(RLDS、Open-X Embodiment);模型发现、资源分配与分布式启动;可视化与端到端部署链。
+
+**世界模型与片上安全**(规划中)
+面向具身决策的 WAM 适配与预测推理;可信启动、数据加密与隐私保护;片上自主性审计与治理。
+
+### 欢迎加入
+
+量化 / 编译 / 推理开发者、VLA 与世界模型研究者、机器人与 ROS 开发者,以及芯片厂商与机构合作伙伴。
+
+### 如何贡献
 
 欢迎任何形式的贡献,再小也欢迎:
 
-- 📚 **补充论文 / benchmark** 到 [Awesome-Quant-VLA-WAM](https://github.com/RadixRootMind/Awesome-Quant-VLA-WAM):按表格格式(标题 · 类型 · 链接)提 PR;或直接开 Issue 贴链接,我们来加。
-- 🐛 **报告问题 / 缺漏** —— 开 Issue 说明哪里有误或缺失。
-- 🔬 **分享结果** —— 复现数据、新量化路线、消融实验。
-- 📝 **完善文档** —— 改错别字、优化措辞、翻译。
-- 💡 **提出想法** —— 发起 Discussion 或开 Issue 讨论新方向。
+- **补充论文 / benchmark** 到 [Awesome-Quant-VLA-WAM](https://github.com/RadixRootMind/Awesome-Quant-VLA-WAM):按表格格式提 PR,或开 Issue 贴链接。
+- **报告问题 / 缺漏**:开 Issue 说明哪里有误或缺失。
+- **分享结果**:复现数据、新量化路线、消融实验。
+- **完善文档**:修订、优化措辞或翻译。
+- **提出想法**:开 Issue 或发起 Discussion 讨论新方向。
 
-**流程**:Fork → 建分支 → 修改 → 提 Pull Request;较大改动请先开 Issue 对齐。PR 请保持聚焦并简要说明,友善建设性沟通。
+流程:Fork、建分支、修改、提 Pull Request;较大改动请先开 Issue 对齐。新人可从标记 `good first issue` 的 issue 入手。
 
-新人可从标记 **`good first issue`** 的 issue 入手。
+### 联系
 
-⭐ 欢迎 Star 支持,Issues / PR / 反馈都欢迎!
-📧 xuenaier856@gmail.com · 🐙 github.com/RadixRootMind · 💬 微信见下
+- 邮箱:xuenaier856@gmail.com
+- GitHub:github.com/RadixRootMind
+- 微信:见下方
 
 ---
 
-## 💬 Community · 社区
+## Community · 社区
 
 <div align="center">
 <b>WeChat · 微信</b><br/>
 <sub>加好友进「RadixRootMind 中国区开发者」群</sub><br/><br/>
-<img src="assets/wechat.png" alt="WeChat QR — add to join the developer group" width="220"/><br/>
+<img src="assets/wechat.png" alt="WeChat QR" width="220"/><br/>
 <sub>扫码加发起人,备注 <code>RadixRootMind</code> 拉你进群</sub>
 </div>
+
+---
+
+<div align="center"><sub>Radix Root-layer Infrastructure for Chip-grounded On-device Embodied Intelligence</sub></div>
