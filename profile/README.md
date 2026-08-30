@@ -4,7 +4,7 @@
 
 **Chip-rooted open infrastructure for on-device embodied intelligence**
 
-*Turning frontier research into open models, systems, data, and evaluation — from silicon up to real-world physical intelligence.*
+<sub>*Radix Root-layer Infrastructure for Chip-grounded On-device Embodied Intelligence*</sub>
 
 [![GitHub followers](https://img.shields.io/github/followers/RadixRootMind?style=social)](https://github.com/RadixRootMind)
 [![Awesome](https://awesome.re/badge.svg)](https://github.com/RadixRootMind/Awesome-Quant-VLA-WAM)
@@ -16,7 +16,9 @@
 
 ---
 
-We are an open developer organization building the **compute substrate for embodied AI** — the layer that connects low-level chip capability, hardware-aware optimization, quantization, and edge deployment to real robots acting in the physical world. Think of it as an **open, chip-rooted foundation** for Vision-Language-Action (VLA) and World-Action (WAM) models — interoperable with existing kernel/compiler ecosystems, not a walled garden.
+RadixRootMind is an open research and engineering organization focused on **chip-grounded infrastructure for on-device embodied intelligence** — spanning cross-chip adaptation, hardware-aware optimization, quantization, MLIR-based compiler infrastructure, multimodal streaming inference, edge runtimes, robotic motion control, world-model prediction, and trusted on-device autonomy.
+
+We transform research insight into open models, compiler systems, control systems, data, and evaluation frameworks — connecting chip-level capability all the way up to real-world physical intelligence. Everything is built in the open and designed to interoperate with existing operator and compiler ecosystems, for the broader AI, robotics, and semiconductor communities.
 
 ## 🚀 Available now
 
@@ -25,7 +27,7 @@ We are an open developer organization building the **compute substrate for embod
 | [**Awesome-Quant-VLA-WAM**](https://github.com/RadixRootMind/Awesome-Quant-VLA-WAM) | Curated reading list — 180+ papers on quantization for VLA & World-Action models, with a five-category taxonomy, roadmap, and evaluation guide | ✅ **Live** |
 | **quant-vla** | Companion engineering stack: VLA post-training quantization (W4A4 & more) + LIBERO evaluation, reproducible pipeline | 🚧 **Coming soon** |
 
-> New here? Start with the **Awesome list** above — ⭐ star & watch to follow the first code release.
+> Start with the **Awesome list** above, and ⭐ star & watch to be notified of our first code release.
 
 ## 🧭 What we're building
 
@@ -38,13 +40,13 @@ End-to-end perception → understanding → prediction → planning → decision
 Benchmarks (LIBERO, ManiSkill2/3, OpenVLA-Bench, WorldReasonBench …); data standards (RLDS, Open-X Embodiment); Studio for model discovery, GPU allocation, and `torchrun` distributed launch; visualization + end-to-end deploy chain.
 
 **🌉 Cross-chip Unified Adaptation Layer** — 🗺️
-Unified operator interface & heterogeneous scheduling; high-performance kernel library; hardware-aware optimization that auto-generates optimal code.
+Unified operator interfaces & heterogeneous scheduling; a capability-abstraction layer that shields chip-specific differences; hardware-aware optimization that auto-generates optimal code.
 
 **⚙️ MLIR Compilation Infrastructure** — 🗺️
 Full graph-lowering & codegen toolchain; Triton-kernel auto-registration & compile caching; dynamic batching & multi-GPU sequence parallelism.
 
 **🤖 Motion — Robot Motion Control** — 🗺️
-Streaming temporal inference + multimodal motion control; millisecond real-time control loop; closed-loop feedback & policy deployment.
+Streaming temporal inference + multimodal motion control; the **A-Motion** closed loop for millisecond real-time control; closed-loop feedback & policy deployment.
 
 **🌍 World Models & On-chip Security** — 🗺️
 WAM adaptation & predictive inference; trusted boot, data encryption, privacy; on-chip autonomy auditing & governance.
@@ -52,8 +54,8 @@ WAM adaptation & predictive inference; trusted boot, data encryption, privacy; o
 ## 🗺️ Roadmap
 
 - **Phase 0 — Foundations** *(now)*: research list, org profile, community setup (WeChat group + contribution guides).
-- **Phase 1 — First code drop**: open-source `quant-vla` with a reproducible *quantize → LIBERO → numbers* pipeline + demo.
-- **Phase 2 — Light up the pillars**: ship one pillar at a time (engine → eval/deploy → cross-chip → MLIR → motion → WAM).
+- **Phase 1 — First code release**: open-source `quant-vla` with a reproducible *quantize → LIBERO → results* pipeline and demo.
+- **Phase 2 — Build out the pillars**: deliver one pillar at a time (engine → eval/deploy → cross-chip → MLIR → motion → WAM).
 - **Phase 3 — Ecosystem**: chip-vendor & institutional partnerships, real-robot demos, contributor programs.
 
 ## 🤝 Who we're looking for
